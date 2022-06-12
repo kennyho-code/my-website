@@ -1,4 +1,7 @@
-import { fail, warn, message, markdown, danger } from 'danger';
+'use strict';
+
+const { danger, fail, message, warn } = require('danger');
+const includes = require('lodash.includes');
 // import commitlint from 'danger-plugin-conventional-commitlint';
 // import configConventional from '@commitlint/config-conventional';
 
@@ -22,7 +25,7 @@ if (!tests.modified) {
 // })();
 
 // Warns if there are changes to package.json, and tags the team.
-// const packageChanged = includes(danger.git.modified_files, 'package.json');
+const packageChanged = includes(danger.git.modified_files, 'package.json');
 if (packageChanged) {
   const title = ':lock: package.json';
   const idea =

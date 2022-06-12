@@ -25,7 +25,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-beta.21",
-    "danger": "^11.0.7"
+    "danger": "^11.0.7",
+    "danger-plugin-conventional-commitlint": "^2.0.0"
   },
   "browserslist": {
     "production": [

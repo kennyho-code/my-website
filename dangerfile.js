@@ -1,6 +1,6 @@
 import { fail, warn, message, markdown, danger } from 'danger';
-// import commitlint from 'danger-plugin-conventional-commitlint';
-// import configConventional from '@commitlint/config-conventional';
+import commitlint from 'danger-plugin-conventional-commitlint';
+import configConventional from '@commitlint/config-conventional';
 
 warn('This is a warning');
 message('This is a normal message');

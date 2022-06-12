@@ -1,6 +1,9 @@
-import { fail, warn, message, markdown, danger } from 'danger';
-import commitlint from 'danger-plugin-conventional-commitlint';
-import configConventional from '@commitlint/config-conventional';
+'use strict';
+
+const { danger, fail, message, warn } = require('danger');
+const includes = require('lodash.includes');
+// import commitlint from 'danger-plugin-conventional-commitlint';
+// import configConventional from '@commitlint/config-conventional';
 
 warn('This is a warning');
 message('This is a normal message');
@@ -22,11 +25,11 @@ if (!tests.modified) {
 // })();
 
 // Warns if there are changes to package.json, and tags the team.
-// const packageChanged = includes(danger.git.modified_files, 'package.json');
-// if (packageChanged) {
-//   const title = ':lock: package.json';
-//   const idea =
-//     'Changes were made to package.json. ' +
-//     'This will require a manual import by a Facebook employee.';
-//   warn(`${title} - <i>${idea}</i>`);
-// }
+const packageChanged = includes(danger.git.modified_files, 'package.json');
+if (packageChanged) {
+  const title = ':lock: package.json';
+  const idea =
+    'Changes were made to package.json. ' +
+    'This will require a manual import by a Facebook employee.';
+  warn(`${title} - <i>${idea}</i>`);
+}

@@ -7,3 +7,10 @@ markdown("*Markdown* is also **supported**")
 
 const { additions = 0, deletions = 0 } = danger.github.pr
 message(`:tada: The PR added ${additions} and removed ${deletions} lines.`)
+
+
+
+const tests = danger.git.fileMatch("*/__tests__/*")
+if (!tests.modified) {
+  warn("You have app changes without tests.")
+}

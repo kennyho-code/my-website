@@ -10,9 +10,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: install yarn
-        run: npm install -g yarn
       - name: Danger
-        run: yarn danger ci
+        run: npm run danger:ci
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

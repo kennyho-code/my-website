@@ -14,12 +14,12 @@ if (!tests.modified) {
   warn('You have app changes without tests.');
 }
 
-// (async function dangerReport() {
-//   const commitlintConfig = {
-//     severity: 'warn',
-//   };
-//   await commitlint(configConventional.rules, commitlintConfig);
-// })();
+(async function dangerReport() {
+  const commitlintConfig = {
+    severity: 'warn',
+  };
+  await commitlint(configConventional.rules, commitlintConfig);
+})();
 
 // Warns if there are changes to package.json, and tags the team.
 // const packageChanged = includes(danger.git.modified_files, 'package.json');

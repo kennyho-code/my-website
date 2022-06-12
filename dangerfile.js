@@ -1,4 +1,4 @@
-import { fail, warn, message, markdown, danger } from 'danger';
+const { fail, warn, message, markdown, danger } = require('danger');
 const commitlint = require('danger-plugin-conventional-commitlint');
 const configConventional = require('@commitlint/config-conventional');
 
